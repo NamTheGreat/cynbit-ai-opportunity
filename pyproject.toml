@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aria-studio-evaluator"
+version = "1.0.0"
+description = "Autonomous Multi-Agent Technical Assessment & Codebase Quality Evaluation Engine for Cynbit Studio & Aria AI"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Naman Kalia", email = "namankalia1904@gmail.com" }
+]
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn>=0.32.0",
+    "pydantic>=2.10.0",
+    "rich>=13.9.0",
+    "httpx>=0.28.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "streamlit>=1.41.0",
+    "altair>=5.4.0",
+    "pandas>=2.2.0",
+]
+
+[project.scripts]
+aria-eval = "aria_evaluator.cli:main"
